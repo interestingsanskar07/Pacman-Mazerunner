@@ -1,10 +1,10 @@
 # Pacman-Mazerunner
 
-# Maze Making
+## Maze Making
 
 maze is made with the help of pillow(python library)
 
-###Code for making maze :
+### Code for making maze :
 
 def draw_matrix(a,m, the_path = []):
     im = Image.new('RGB', (zoom * len(a[0]), zoom * len(a)), (255, 255, 255))
@@ -35,11 +35,11 @@ def draw_matrix(a,m, the_path = []):
     images.append(im)
 
 
-# Breadth First Search is done throgh
+## Breadth First Search is done throgh
 
 BFS is done through travering the pacman through the maze to each leaf node to get the destination node
 
-###Code for traversing : 
+### Code for traversing : 
 def make_step(k):
   for i in range(len(m)):
     for j in range(len(m[i])):
@@ -53,7 +53,7 @@ def make_step(k):
         if j<len(m[i])-1 and m[i][j+1] == 0 and a[i][j+1] == 0:
            m[i][j+1] = k + 1
            
-###Code for Getting Path :
+### Code for Getting Path :
 while k > 1:
   if i > 0 and m[i - 1][j] == k-1:
     i, j = i-1, j
@@ -80,10 +80,10 @@ for i in range(10):
 
 
 
-# Depth First Search
+## Depth First Search
 
 DFS is done by directly searching one single node and going deep node by node to get the destination node.
-###Code for Traversing :
+### Code for Traversing :
 def dfs(i,j):
     global path, i_end,j_end, a, k
     if i<0 or j<0 or i>len(a)-1 or j>len(a[0])-1:
